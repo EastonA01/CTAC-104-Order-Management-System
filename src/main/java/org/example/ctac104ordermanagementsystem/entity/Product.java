@@ -1,8 +1,16 @@
-package org.example.ctac104ordermanagementsystem;
+package org.example.ctac104ordermanagementsystem.entity;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @Entity
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -15,6 +23,4 @@ public class Product {
     @ManyToOne
     @JoinColumn(name = "order_id")
     private Order order;
-
-    // Getters, Setters, Constructors (Lombok can be used here)
 }
